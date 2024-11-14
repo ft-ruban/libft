@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:59:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/14 17:29:28 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:03:48 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <string.h>
-#include <stdio.h>
+//#include <stdio.h>
 
-void	ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
 /*
 int	main (void)
 {
 	char string [42] = "forty-two";
-	int	character = '4';
 	int number = 5;
 	int	i = 0;	
-	ft_memset(string, character, number);
+	ft_bzero(string, number);
 
-	while (string [i] != '\0') 
+	while (i != 10) 
 	{
 		printf("%c",string [i]);
 		i++;
@@ -33,14 +32,14 @@ int	main (void)
 }
 */
 
-void	ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 
 	p = (unsigned char *)s;
 	while (n > 0)
 	{
-		*p = c;
+		*p = '\0';
 		p++;
 		n--;
 	}
