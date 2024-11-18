@@ -9,5 +9,6 @@
 ###about strlcpy
 - have to verify a bit more if everything is in order. it seems to be the case but I wanna be sure before getting an evaluation and maybe make my code more compact :>
 
-
+###about strlcat
+- was complicated, I may have failed ####strlcpy, have to check at some point, do not hesitate to get back to the function to make sure I understand everything about it.
 
