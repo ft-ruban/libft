@@ -20,3 +20,6 @@
 
 ###about ft_strncmp.c 
 - learned how to make my synthax super compact!!!
+
+###about ft_memchr.c 
+- dear princess celestia, today I learned that casting is not always the solution, but also pointers can be your true and most loyal friends during harsh time, and that friendship is cool  and magic and stuff blabla  and it does help a lot during my journey to become a better dev, also it is kinda late, good night.
