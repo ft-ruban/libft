@@ -12,3 +12,5 @@
 ###about strlcat
 - was complicated, I may have failed ####strlcpy, have to check at some point, do not hesitate to get back to the function to make sure I understand everything about it.
 
+###about ft_strchr.c
+- Struggled with the cast, would be a good idea to check that once again!
