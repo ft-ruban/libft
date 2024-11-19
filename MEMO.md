@@ -14,3 +14,6 @@
 
 ###about ft_strchr.c
 - Struggled with the cast, would be a good idea to check that once again!
+
+###about ft_strrchr.>
+- Learn about pointers and arrays (like you can navigate trough array with string++ for exemple)
