@@ -1,19 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/20 13:21:48 by ldevoude          #+#    #+#             */
+/*   Updated: 2024/11/20 13:29:36 by ldevoude         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //#include <stdio.h>
 //#include <string.h>
 
-void* ft_memchr(const void* ptr, int ch, size_t count)
+void	*ft_memchr(const void *ptr, int ch, size_t count)
 {
-    const unsigned char *p = ptr;
-    unsigned char c = (unsigned char)ch;
-    while (count--)
-    {
-        if (*p == c)
-        {
-            return((void *)p);
-        }
-        p++;
-    }
-    return(0);
+	const unsigned char		*p;
+	unsigned char			c;
+
+	*p = ptr;
+	c = (unsigned char)ch;
+	while (count--)
+	{
+		if (*p == c)
+		{
+			return ((void *)p);
+		}
+		p++;
+	}
+	return (0);
 }
 /*
 int main(void)
