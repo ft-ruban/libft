@@ -26,3 +26,9 @@
 
 ###about ft_strnstr.c 
 - need to turn the basic functions into a ft_ version (made by me)
+
+###about ft_calloc.c 
+- went surprisingly well, NEED TO DO THE NORME AND LEARN MORE ABOUT SYNTHAX OF MALLOC
+
+###about strdup.c 
+- was complicated, need to look at it more often to learn the logic behind it, DO THE NORME AS WELL
