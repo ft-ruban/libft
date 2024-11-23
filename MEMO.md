@@ -32,3 +32,6 @@
 
 ###about strdup.c 
 - was complicated, need to look at it more often to learn the logic behind it, DO THE NORME AS WELL
+
+###about strtrim.c 
+- fucking jesus never again (still have to do the norm) fun aside learned a lot by doing it
