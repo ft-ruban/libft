@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/25 12:40:55 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:25:05 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,40 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *count_for_malloc(int integer, int is_negative);
+char *count_for_malloc(int *integer, int is_negative);
 
 char *ft_itoa(int n)
 {
 	char *result;
-	int	  is_negative;
 
-	is_negative = 0;
-	result = count_for_malloc(n,is_negative);
+	result = count_for_malloc(&n,is_negative);
 	if(!result)
 		return (0);
+	printf("%d",n);
 	printf("%s",result);
+	//while (integer > 0
 	return (result);
 }
 
-char *count_for_malloc(int integer,int is_negative)
+char *count_for_malloc(int *integer,int is_negative)
 {
 	char *result;
 	int	  count;
+	int	  buff;
 
 	count = 0;
-	if (integer < 0)
+	buff = *integer;
+	if (*integer < 0)
 	{
 		is_negative++;
-		integer *= -1;
+		(*integer) = (*integer)  * -1;
 		count++;
 	}
 	if (integer == 0)
 		count++;
-	while (integer != 0)
+	while (buff != 0)
 	{
-		integer /= 10;
+		buff /= 10;
 		count++;
 	}
 	result = malloc(count + 1 * sizeof(char));
