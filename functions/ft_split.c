@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:54:22 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/25 10:15:43 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:15:37 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ char	**ft_split(char const *s, char c)
 	if (!ptr)
 		return (0);
 	count = 0;
-	return (splited(s, ptr, c, i));
+	ptr = splited(s, ptr, c, i);
+	if (!ptr)
+		return (0);
+	return (ptr);
 }
 
 char	**splited(char const *s, char **ptr, char c, int i)
@@ -89,7 +92,7 @@ int	count_substrings(char const *s, char c)
 	}
 	return (counter);
 }
-/*
+
 int main(void)
 {
     char s[64] = "---Forty--Two-Three-";
@@ -99,4 +102,5 @@ int main(void)
     printf("%s\n", result[0]);
     printf("%s\n", result[1]);
     printf("%s\n", result [2]);
-}*/
+
+}
