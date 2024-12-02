@@ -95,8 +95,8 @@ int	count_substrings(char const *s, char c)
 
 int main(void)
 {
-    char s[64] = "---Forty--Two-Three-";
-    char c = '-';
+    char s[64] = " Forty-- Two -Three-";
+    char c = ' ';
     char **result = ft_split(s,c);
 
     printf("%s\n", result[0]);
