@@ -6,14 +6,14 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 10:48:44 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/22 11:07:20 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:17:29 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <string.h>
-//#include <stdlib.h>
-//#include <stdio.h>
-//#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
 char	*ft_strdup(const char *source)
 {
 	char	*result;

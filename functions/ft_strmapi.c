@@ -6,10 +6,11 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 10:13:31 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 10:15:26 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:20:26 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

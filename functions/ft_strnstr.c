@@ -6,18 +6,18 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:22:13 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/20 16:19:44 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:21:46 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h> //-lbsd
+#include <stdio.h>
+#include <string.h> //-lbsd
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t	n;
 
 	n = strlen(s2);
-	if (1s1 ||!s2)
+	if (s1 ||!s2)
 		return (0);
 	if (n == 0)
 		return (0);

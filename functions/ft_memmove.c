@@ -6,12 +6,12 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:59:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/18 08:49:05 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:12:50 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <string.h>
-//#include <stdio.h>
+#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 /*

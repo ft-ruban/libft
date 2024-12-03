@@ -6,19 +6,19 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:21:48 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/20 13:29:36 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:11:41 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 //#include <string.h>
 
 void	*ft_memchr(const void *ptr, int ch, size_t count)
 {
-	const unsigned char		*p;
-	unsigned char			c;
+	unsigned char		*p;
+	unsigned char	  	c;
 
-	*p = ptr;
+	p = (unsigned char*)ptr;
 	c = (unsigned char)ch;
 	while (count--)
 	{

@@ -6,11 +6,11 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:33:54 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/20 14:19:45 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:11:55 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 //#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t *n)

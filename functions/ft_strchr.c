@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:51:39 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/19 10:08:53 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:16:53 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	//int i = 0;
 
 	printf("%s\n",ft_strchr(s,c));
-	/*while(s[i] != '\0')
+	while(s[i] != '\0')
 	{
 		printf("%c\n",s[i]);
 		i++;

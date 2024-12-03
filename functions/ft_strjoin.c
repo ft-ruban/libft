@@ -6,13 +6,13 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:18:06 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/22 13:38:02 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:19:45 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdlib.h>
+#include <stdlib.h>
 //#include <stdio.h>
-//#include <string.h>
+#include <string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

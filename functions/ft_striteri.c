@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 10:02:14 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 10:11:50 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:19:17 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
+/*
 void	capslock(unsigned int index, char *c)
 {
 	if (*c >= 'a' && *c <= 'z')
 		*c -= 32;
 }
-/*
+
 int main() {
     char str[] = "hello world";
 

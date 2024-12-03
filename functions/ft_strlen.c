@@ -6,11 +6,11 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:10:20 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/14 13:45:12 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:20:04 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 //#include <ctype.h>
 //#include <string.h>
 

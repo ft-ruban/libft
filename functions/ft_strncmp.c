@@ -6,11 +6,11 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:18:19 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/19 14:01:41 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:20:39 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 //#include <string.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n);

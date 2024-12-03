@@ -6,12 +6,12 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:59:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/14 17:03:48 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:03:06 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <string.h>
-//#include <stdio.h>
+#include <string.h>
+#include <stdio.h>
 
 void	ft_bzero(void *s, size_t n);
 /*

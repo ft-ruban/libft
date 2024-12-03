@@ -6,11 +6,11 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:59:16 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/22 13:12:07 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:21:59 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdlib.h>
+#include <stdlib.h>
 //#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

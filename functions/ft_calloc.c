@@ -6,13 +6,13 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 10:42:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/22 10:45:49 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:04:48 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //#include <unistd.h>
-//#include <stdlib.h>
+#include <stdlib.h>
 
 void	*ft_calloc(size_t element_count, size_t element_size)
 {

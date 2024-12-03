@@ -6,10 +6,10 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 08:59:11 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 10:51:00 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:13:30 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
