@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:54:22 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/26 16:15:37 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/03 09:42:46 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	count_substrings(char const *s, char c)
 	}
 	return (counter);
 }
-
+/*
 int main(void)
 {
     char s[64] = " Forty-- Two -Three-";
@@ -102,5 +102,5 @@ int main(void)
     printf("%s\n", result[0]);
     printf("%s\n", result[1]);
     printf("%s\n", result [2]);
-
 }
+*/
