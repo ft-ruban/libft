@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:21:48 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 13:11:41 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/04 07:15:53 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 void	*ft_memchr(const void *ptr, int ch, size_t count)
 {
 	unsigned char		*p;
-	unsigned char	  	c;
+	unsigned char		c;
 
-	p = (unsigned char*)ptr;
+	p = (unsigned char *) ptr;
 	c = (unsigned char)ch;
 	while (count--)
 	{

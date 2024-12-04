@@ -6,12 +6,13 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:22:13 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 13:21:46 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/04 07:11:15 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h> //-lbsd
+
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t	n;

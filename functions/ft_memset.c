@@ -6,14 +6,14 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:59:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/14 17:29:28 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/04 09:31:00 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <string.h>
+#include <string.h>
 #include <stdio.h>
 
-void	ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 /*
 int	main (void)
 {
@@ -33,7 +33,7 @@ int	main (void)
 }
 */
 
-void	ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
 
@@ -44,4 +44,5 @@ void	ft_memset(void *s, int c, size_t n)
 		p++;
 		n--;
 	}
+	return (s);
 }
