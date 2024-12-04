@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:10:20 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/14 11:08:22 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:03:08 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,28 @@ int	main(void)
 	return(0);
 }
 */
-
+//old function, francinette didnt liked it for some reasons
+/*
 int	ft_isprint(int c)
 {
-	if ((c >= 0 && c <= 31) || c >= 127)
+	if ((c >= 0 && c <= 31) || c == 127)
 	{
 		return (0);
 	}
 	else
 	{
 		return (42);
+	}
+}*/
+
+int	ft_isprint(int c)
+{
+	if (c >= ' ' && c <= '~')
+	{
+		return (42);
+	}
+	else
+	{
+		return (0);
 	}
 }
