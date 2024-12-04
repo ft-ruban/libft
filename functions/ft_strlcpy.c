@@ -6,12 +6,12 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:58:50 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/18 11:09:43 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:20:48 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-//#include <string.h>
+#include <string.h>
 //#include <bsd/string.h> //-lbsd
 //#include <unistd.h>
 //#include <stdlib.h>
@@ -48,6 +48,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	return_val;
 
+	if(size == 0)
+		return (strlen(src));
 	return_val = 0;
 	while (--size > 0 && src[return_val] != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:59:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/15 10:23:08 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:14:48 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*src_char;
 	int		i;
 
+	if(dest == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	dest_char = (char *) dest;
 	src_char = (char *) src;
@@ -48,5 +50,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		n--;
 		i++;
 	}
-	return (dest_char);
+	return (dest);
 }
