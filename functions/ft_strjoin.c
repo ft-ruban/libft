@@ -6,12 +6,12 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:18:06 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 13:19:45 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:36:53 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-//#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -22,7 +22,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	j = 0;
 	i = 0;
-	str = malloc(sizeof(strlen(s1) + strlen(s2)));
+	str = malloc(sizeof(char) * (strlen(s1) + strlen(s2)) + 1);
+	if (!str)
+		return (NULL);
 	while (s1[j] != 0)
 	{
 		str[i] = s1[j];
@@ -42,8 +44,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 /*
 int main(void)
 {
-	char s1[42] = "forty";
-	char s2[42] = "-two";
+	char s1[42] = "lorem ipsumdolor ";
+	char s2[42] = "sit amet";
 	char *result;
 
 	//result = malloc(5);
