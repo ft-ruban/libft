@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:36:02 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 09:58:31 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:06:31 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@ char	*result(char const *s1, size_t start, size_t end);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char  *ptr;
+	ptr = malloc(sizeof(char) * 1);
+	if (!ptr)
+		return (NULL);
+	ptr[0] = 0;
+	if (!s1)
+	{
+		return (ptr);
+	}
 	size_t	i;
 	size_t	j;
 
@@ -63,6 +72,7 @@ char	*result(char const *s1, size_t start, size_t end)
 		str[i] = s1[start + i];
 		i++;
 	}
+		str[i] = 0;
 	return (str);
 }
 /*
