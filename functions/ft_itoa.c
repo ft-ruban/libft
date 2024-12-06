@@ -6,13 +6,15 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 09:41:58 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/06 18:53:26 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
+
 
 char	*convert(long n, int i, char *result, char *buff);
 char	*count_for_malloc(long *integer, int *is_negative);
@@ -25,22 +27,27 @@ char	*ft_itoa(int n)
 	long	ln;
 
 	i = 0;
-	ln = (long) n;
+	ln = n;
 	if (n == 0)
 	{
-		result = malloc(1 + 1 * sizeof(char));
-		result[0] = '0';
-		result[1] = 0;
+		result = strdup("0");
+		if (!result)
+			return (malloc(0));
+
+	// result[0] = '0';
+		//  result[1] = 0;
 		return (result);
 	}
 	buff = count_for_malloc(&ln, &i);
+	if (!buff)
+		return (malloc(0));
 	result = count_for_malloc(&ln, &i);
 	if (!result)
-		return (0);
-	if (!buff)
-		return (0);
+		return (free(buff), malloc(0));
 	result = convert (ln, i, result, buff);
-	return (result);
+	if (!result)
+		return (free(buff), malloc(0));
+	return (free(buff), result);
 }
 
 char	*convert(long n, int i, char *result, char *buff)
@@ -73,31 +80,37 @@ char	*count_for_malloc(long *integer, int *is_negative)
 	long	buff;
 
 	count = 0;
-	buff = *integer;
 	if (*integer < 0)
 	{
-		(*is_negative)++;
+		if (*is_negative == 0)
+			(*is_negative)++;
 		(*integer) = (*integer) * -1;
 		count++;
 	}
-	if (integer == 0)
-		count++;
-	while (buff != 0)
+	/*if (integer == 0)
+		count++;*/
+	buff = *integer;
+	while (buff > 0)
 	{
 		buff /= 10;
+		// printf("buff :%lu\n",buff);
 		count++;
 	}
-	result = malloc(count + 1 * sizeof(char));
+	if (buff < 10)
+			count++;
+	result = malloc((count + 1) * sizeof(char));
 	if (!result)
-		return (0);
-	if (is_negative)
+		return (NULL);
+	if (*is_negative > 0)
 		result[0] = '-';
 	return (result);
 }
-/*
+
+/*#include <limits.h>
+
 int main (void)
 {
-	int n = -42;
-	char *ptr = ft_itoa(n);
+	int n = INT_MAX;
+	char *ptr = ft_itoa(n + 1);
 	printf("FINAL : %s", ptr);
-} */
+}*/

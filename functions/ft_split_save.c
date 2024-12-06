@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:54:22 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/06 17:35:38 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/06 13:59:52 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 #include <string.h>
 
 int		count_substrings(char const *s, char c);
-char	**splited(char const *s, char **ptr, char c, int n_word);
-int count_size(char const *s, char c, int *i);
-char  **ft_free_split(char **ptr);
+char	**splited(char const *s, char **ptr, char c, int i);
+void	count_size(char const *s, char c, int *count, int *i);
 
 char	**ft_split(char const *s, char c)
 {
@@ -26,63 +25,53 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	count = count_substrings(s, c);
-	//printf("count = %i\n", count);
 	ptr = malloc((count + 1) * sizeof(char *));
 	if (!ptr)
 		return (NULL);
-	ptr[count] = NULL;
-	
-	ptr = splited(s, ptr, c, count);
+	ptr[count +1] = NULL;
+	count = 0;
+	ptr = splited(s, ptr, c, i);
 	if (!ptr)
 		return (NULL);
 	return (ptr);
 }
 
-char	**splited(char const *s, char **ptr, char c, int n_word)
+char	**splited(char const *s, char **ptr, char c, int i)
 {
 	int		j;
 	int		k;
 	int		l;
-	int	i;
+	int		count;
 
 	j = 0;
+	k = 0;
 	l = 0;
-	i = 0;
-	while (j < n_word && s[i] && s[i + 1])
+	//while (s[i] != 0)
+	while (s[i])
 	{
-		k = 0;
-		while (s[i] == c)
-		{
+		count = 0;
+		while (s[i++] == c)
 			l++;
-			i++;
-		}
-		ptr[j] = malloc((count_size(s, c, &i) + 1) * sizeof(char));
-		//ptr[j] = calloc((count + 1), sizeof(char));
+		count_size (s, c, &count, &i);
+		ptr[j] = malloc((count + 1) * sizeof(char));
 		if (!ptr[j])
-			return (ft_free_split(ptr));
-		while (l < i)
+			return (NULL);
+		while (s[l] != s[i])
 			ptr[j][k++] = s[l++];
-		ptr[j++][k] = '\0';
+		ptr[j++][k] = 0;
+		k = 0;
 	}
 	return (ptr);
 }
 
-int count_size(char const *s, char c, int *i)
+void	count_size(char const *s, char c, int *count, int *i)
 {
-	//while ((s[*i + 1] != 0 || s[*i] != 0) && s[*i] != c)
-	int count;
-
-	count = 0;
-	while (s[*i] != 0 && s[*i] != c )
+	while (s[*i] != 0 && s[*i] != c)
 	{
-		count++;
+		(*count)++;
 		(*i)++;
-//		printf("valeur de count : %d\n", *count);
 	}
-	return (count);
 }
 
 int	count_substrings(char const *s, char c)
@@ -92,49 +81,28 @@ int	count_substrings(char const *s, char c)
 
 	counter = 0;
 	i = 0;
-	while (*s)
+	while (s[i] != 0)
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		while (s[i] == c)
+			i++;
+		if (s[i] != 0)
 		{
 			counter++;
-			while (*s != c && *s)
-				s++;
+			while (s[i] != c && s[i] != 0)
+				i++;
 		}
 	}
 	return (counter);
 }
-
-/*int main(void)
+/*
+int main(void)
 {
-    char *s = "^^^1^^2a,^^^^3^^^^--h^^^^";
-    char c = '^';
+    char *s = "split  ||this|for|me|||||!|";
+    char c = '|';
     char **result = ft_split(s,c);
-	int i = 0;
 
-	while (result && result[i])
-	{
-		printf("%s\n", result[i]);
-		i++;
-	}
-	ft_free_split(result);
-	return (0);
-}*/
-char **ft_free_split(char **ptr)
-{
-	int	index;
-
-	index = 0;
-	while (ptr && ptr[index])
-	{
-		if (ptr[index])
-			free(ptr[index]);
-		index++;
-	}
-	if (ptr)
-		free(ptr);
-	return (NULL);
+    printf("%s\n", result[0]);
+    printf("%s\n", result[1]);
+    printf("%s\n", result [2]);
 }
-
-
+*/
