@@ -6,11 +6,9 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:51:39 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 20:09:18 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 20:28:41 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 char	*ft_strrchr(const char *string, int searched_char)
 {
@@ -43,5 +41,3 @@ int	main(void)
 
 	printf("%s\n",ft_strrchr(s,c));
 }*/
-
-

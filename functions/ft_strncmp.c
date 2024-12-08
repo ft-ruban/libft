@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:18:19 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 20:04:14 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 20:25:54 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 /*
 #include <stdio.h>
 #include <string.h>
-
 int	main(void)
 {
 	char	s1[42] = "test";

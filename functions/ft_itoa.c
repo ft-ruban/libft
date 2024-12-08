@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 20:08:44 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 20:27:15 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static char	*convert(long n, int i, char *result, char *buff)
 static char	*count_for_malloc(long *integer, int *is_negative)
 
 {
-	char *result;
-	int count;
-	long buff;
+	char	*result;
+	int		count;
+	long	buff;
 
 	count = 0;
 	if (*is_negative == 1)

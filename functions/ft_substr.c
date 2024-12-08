@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:59:16 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 20:21:07 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 20:27:53 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static char	*error_malloc(char *ptr, char const *s)
 	ptr[0] = 0;
 	return (ptr);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
