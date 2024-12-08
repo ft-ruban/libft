@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 13:17:13 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 13:13:57 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+
 
 char	*convert(long n, int i, char *result, char *buff);
 char	*count_for_malloc(long *integer, int *is_negative);
@@ -80,7 +81,8 @@ char	*count_for_malloc(long *integer, int *is_negative)
 		count++;
 	if (*integer < 0)
 	{
-		(*is_negative) = 1;
+		if (*is_negative == 0)
+			(*is_negative)++;
 		(*integer) = (*integer) * -1;
 		count++;
 	}
