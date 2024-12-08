@@ -3,45 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:54:22 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/06 17:35:38 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:57:19 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "libft.h"
 
-int		count_substrings(char const *s, char c);
-char	**splited(char const *s, char **ptr, char c, int n_word);
-int count_size(char const *s, char c, int *i);
-char  **ft_free_split(char **ptr);
-
-char	**ft_split(char const *s, char c)
+static int count_size(char const *s, char c, int *i)
 {
-	int		i;
-	int		count;
-	char	**ptr;
+	//while ((s[*i + 1] != 0 || s[*i] != 0) && s[*i] != c)
+	int count;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	count = count_substrings(s, c);
-	//printf("count = %i\n", count);
-	ptr = malloc((count + 1) * sizeof(char *));
-	if (!ptr)
-		return (NULL);
-	ptr[count] = NULL;
-	
-	ptr = splited(s, ptr, c, count);
-	if (!ptr)
-		return (NULL);
-	return (ptr);
+	count = 0;
+	while (s[*i] != 0 && s[*i] != c )
+	{
+		count++;
+		(*i)++;
+//		printf("valeur de count : %d\n", *count);
+	}
+	return (count);
 }
 
-char	**splited(char const *s, char **ptr, char c, int n_word)
+char **ft_free_split(char **ptr)
+{
+	int	index;
+
+	index = 0;
+	while (ptr && ptr[index])
+	{
+		if (ptr[index])
+			free(ptr[index]);
+		index++;
+	}
+	if (ptr)
+		free(ptr);
+	return (NULL);
+}
+
+static char	**splited(char const *s, char **ptr, char c, int n_word)
 {
 	int		j;
 	int		k;
@@ -70,22 +75,8 @@ char	**splited(char const *s, char **ptr, char c, int n_word)
 	return (ptr);
 }
 
-int count_size(char const *s, char c, int *i)
-{
-	//while ((s[*i + 1] != 0 || s[*i] != 0) && s[*i] != c)
-	int count;
 
-	count = 0;
-	while (s[*i] != 0 && s[*i] != c )
-	{
-		count++;
-		(*i)++;
-//		printf("valeur de count : %d\n", *count);
-	}
-	return (count);
-}
-
-int	count_substrings(char const *s, char c)
+static int	count_substrings(char const *s, char c)
 {
 	int		i;
 	int		counter;
@@ -106,6 +97,28 @@ int	count_substrings(char const *s, char c)
 	return (counter);
 }
 
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		count;
+	char	**ptr;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	count = count_substrings(s, c);
+	//printf("count = %i\n", count);
+	ptr = malloc((count + 1) * sizeof(char *));
+	if (!ptr)
+		return (NULL);
+	ptr[count] = NULL;
+	
+	ptr = splited(s, ptr, c, count);
+	if (!ptr)
+		return (NULL);
+	return (ptr);
+}
+
 /*int main(void)
 {
     char *s = "^^^1^^2a,^^^^3^^^^--h^^^^";
@@ -121,20 +134,5 @@ int	count_substrings(char const *s, char c)
 	ft_free_split(result);
 	return (0);
 }*/
-char **ft_free_split(char **ptr)
-{
-	int	index;
-
-	index = 0;
-	while (ptr && ptr[index])
-	{
-		if (ptr[index])
-			free(ptr[index]);
-		index++;
-	}
-	if (ptr)
-		free(ptr);
-	return (NULL);
-}
 
 

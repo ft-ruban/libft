@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 10:42:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/05 15:29:52 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:38:49 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t element_count, size_t element_size)
 {
@@ -33,15 +31,17 @@ void	*ft_calloc(size_t element_count, size_t element_size)
 	return (ptr);
 }
 /*
-int main(void)
+#include <stdio.h>
+
+int	main(void)
 {
-    int num_rats = 10;
-    int *rats_list = 0;
-    //int i;
+	int num_rats = 10;
+	int *rats_list = 0;
+	//int i;
 
 
-    rats_list = ft_calloc(num_rats, 8);
+	rats_list = ft_calloc(num_rats, 8);
 
-    while (num_rats--)
-        printf("[%d]", rats_list[num_rats]);
+	while (num_rats--)
+		printf("[%d]", rats_list[num_rats]);
 }*/

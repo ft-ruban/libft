@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 08:59:11 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 10:39:58 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:11:53 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_putstr_fd(char *s, int fd)
 
 	length = strlen(s);
 	write (fd, s, length);
-	return ;
 }
 /*
 int main(void)

@@ -3,50 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 13:17:13 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:53:13 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
+#include "libft.h"
 
-char	*convert(long n, int i, char *result, char *buff);
-char	*count_for_malloc(long *integer, int *is_negative);
-
-char	*ft_itoa(int n)
-{
-	char	*result;
-	int		i;
-	char	*buff;
-	long	ln;
-
-	i = 0;
-	ln = n;
-	if (n == 0)
-	{
-		result = strdup("0");
-		if (!result)
-			return (malloc(0));
-		return (result);
-	}
-	buff = count_for_malloc(&ln, &i);
-	if (!buff)
-		return (malloc(0));
-	result = count_for_malloc(&ln, &i);
-	if (!result)
-		return (free(buff), malloc(0));
-	result = convert (ln, i, result, buff);
-	if (!result)
-		return (free(buff), malloc(0));
-	return (free(buff), result);
-}
-
-char	*convert(long n, int i, char *result, char *buff)
+static char	*convert(long n, int i, char *result, char *buff)
 {
 	int	length;
 	int	j;
@@ -68,12 +34,12 @@ char	*convert(long n, int i, char *result, char *buff)
 	return (result);
 }
 
-char	*count_for_malloc(long *integer, int *is_negative)
+static char	*count_for_malloc(long *integer, int *is_negative)
 
 {
-	char	*result;
-	int		count;
-	long	buff;
+	char *result;
+	int count;
+	long buff;
 
 	count = 0;
 	if (*is_negative == 1)
@@ -98,7 +64,38 @@ char	*count_for_malloc(long *integer, int *is_negative)
 	return (result);
 }
 
-/*#include <limits.h>
+char	*ft_itoa(int n)
+{
+	char	*result;
+	int		i;
+	char	*buff;
+	long	ln;
+
+	i = 0;
+	ln = n;
+	if (n == 0)
+	{
+		result = ft_strdup("0");
+		if (!result)
+			return (malloc(0));
+		return (result);
+	}
+	buff = count_for_malloc(&ln, &i);
+	if (!buff)
+		return (malloc(0));
+	result = count_for_malloc(&ln, &i);
+	if (!result)
+		return (free(buff), malloc(0));
+	result = convert(ln, i, result, buff);
+	if (!result)
+		return (free(buff), malloc(0));
+	return (free(buff), result);
+}
+
+/*
+#include <limits.h>
+#include <stdio.h>
+#include <string.h>
 
 int main (void)
 {

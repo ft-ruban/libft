@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:26:14 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/04 08:36:42 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:34:03 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <stdlib.h>
 #include <stdbool.h>
 
 int	ft_atoi(const char *nptr)
@@ -20,7 +18,7 @@ int	ft_atoi(const char *nptr)
 	long	result;
 	bool	negative;
 
-	negative = 0;
+	negative = false;
 	result = 0;
 	i = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
@@ -28,7 +26,7 @@ int	ft_atoi(const char *nptr)
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			negative = 1;
+			negative = true;
 		i++;
 	}
 	while (nptr[i] <= '9' && nptr[i] >= '0')
@@ -38,13 +36,17 @@ int	ft_atoi(const char *nptr)
 			result *= 10;
 		i++;
 	}
-	if (negative == 1)
+	if (negative == true)
 		result *= -1;
 	return (result);
 }
 /*
+#include <stdio.h>
+
 int	main(void)
 {
-	char  nptr[42] = "-420";
+	char	nptr[42] = "-420";
+
 	printf("%d",ft_atoi(nptr));
-}*/
+}
+*/
