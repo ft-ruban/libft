@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 18:53:13 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 20:08:44 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,18 @@ char	*ft_itoa(int n)
 	{
 		result = ft_strdup("0");
 		if (!result)
-			return (malloc(0));
+			return (NULL);
 		return (result);
 	}
 	buff = count_for_malloc(&ln, &i);
 	if (!buff)
-		return (malloc(0));
+		return (NULL);
 	result = count_for_malloc(&ln, &i);
 	if (!result)
-		return (free(buff), malloc(0));
+		return (free(buff), NULL);
 	result = convert(ln, i, result, buff);
 	if (!result)
-		return (free(buff), malloc(0));
+		return (free(buff), NULL);
 	return (free(buff), result);
 }
 

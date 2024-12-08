@@ -3,35 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:59:27 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/04 09:31:00 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:13:34 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-void	*ft_memset(void *s, int c, size_t n);
-/*
-int	main (void)
-{
-	char string [42] = "forty-two";
-	int	character = '4';
-	int number = 5;
-	int	i = 0;	
-	ft_memset(string, character, number);
-
-	while (string [i] != '\0') 
-	{
-		printf("%c",string [i]);
-		i++;
-	}
-	return (0);
-
-}
-*/
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -46,3 +25,26 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main (void)
+{
+	int	character;
+	int	number;
+	int	i;
+
+	char string [42] = "forty-two";
+	character = '4';
+	number = 5;
+	i = 0;
+	ft_memset(string, character, number);
+	while (string [i] != '\0')
+	{
+		printf("%c",string [i]);
+		i++;
+	}
+	return (0);
+}
+*/

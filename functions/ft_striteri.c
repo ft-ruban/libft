@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 10:02:14 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 13:19:17 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:55:52 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
@@ -28,19 +26,16 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 /*
-void	capslock(unsigned int index, char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-		*c -= 32;
-}
+#include <ctype.h>
+#include <stdio.h>
 
-int main() {
-    char str[] = "hello world";
+int	main(void) {
+	char str[] = "hello world";
 
-    printf("Before: %s\n", str);
+	printf("Before: %s\n", str);
 
-    ft_striteri(str, capslock);
+	ft_striteri(str, capslock);
 
-    printf("After: %s\n", str);
+	printf("After: %s\n", str);
 	return (0);
 }*/

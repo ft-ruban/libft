@@ -6,12 +6,9 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:10:20 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 18:47:58 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 19:03:18 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
-//#include <ctype.h>
 
 int	ft_isprint(int c)
 {

@@ -6,19 +6,13 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 08:59:11 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 18:15:34 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 19:52:10 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
 
-int		calculate_val_tens(long cast_n);
-
-int	calculate_val_tens(long cast_n)
+static int	calculate_val_tens(long cast_n)
 {
 	int	result;
 
@@ -64,6 +58,10 @@ void	ft_putnbr_fd(int n, int fd)
 }
 
 /*
+#include <fcntl.h>
+#include <stdio.h>
+#include <string.h>
+
 int	main(void)
 {
 	int	handle;

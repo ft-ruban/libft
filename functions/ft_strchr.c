@@ -3,18 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:51:39 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/03 13:16:53 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:21:44 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
-
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0')
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
+	return (0);
+}
 /*
+#include <stdio.h>
+#include <string.h>
+
 int	main(void)
 {
 	char s[42] = "forty-two";
@@ -29,16 +40,3 @@ int	main(void)
 	}
 	*/
 //}
-
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s != '\0')
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (*s == (char)c)
-		return ((char *)s);
-	return (0);
-}

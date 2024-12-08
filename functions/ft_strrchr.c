@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:51:39 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/11/19 11:00:51 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 20:09:18 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
 
-char	*ft_strrchr(const char *string, int searched_char);
-
-/*
-int	main(void)
-{
-	const char s[42] = "forty-two";
-	int c = 't';
-	//int i = 0;
-
-	printf("%s\n",ft_strrchr(s,c));
-}*/
 
 char	*ft_strrchr(const char *string, int searched_char)
 {
@@ -44,3 +31,17 @@ char	*ft_strrchr(const char *string, int searched_char)
 	}
 	return (0);
 }
+
+/*
+//#include <stdio.h>
+//#include <string.h>
+int	main(void)
+{
+	const char s[42] = "forty-two";
+	int c = 't';
+	//int i = 0;
+
+	printf("%s\n",ft_strrchr(s,c));
+}*/
+
+

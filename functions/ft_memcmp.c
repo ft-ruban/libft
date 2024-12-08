@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:33:54 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/05 08:42:09 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:08:11 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -31,11 +30,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return ((int)(*it1) - (int)(*it2));
 }
 /*
+#include <stdio.h>
+#include <string.h>
+
 int	main(void)
 {
-	char s1[42] = "\xff\xaa\xde\xffMACOSX\xff";
-	char s2[42] = "\xff\xaa\xde\x02";
-	size_t n	= 8;
+	char	s1[42] = "\xff\xaa\xde\xffMACOSX\xff";
+	char	s2[42] = "\xff\xaa\xde\x02";
+	size_t	n;
+
+	n = 8;
 	//printf("%d\n",ft_memcmp(s1,s2,n));
 	return (0);
 }

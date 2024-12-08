@@ -6,31 +6,26 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:54:22 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 18:57:19 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 19:53:01 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-static int count_size(char const *s, char c, int *i)
+static int	count_size(char const *s, char c, int *i)
 {
-	//while ((s[*i + 1] != 0 || s[*i] != 0) && s[*i] != c)
-	int count;
+	int	count;
 
 	count = 0;
-	while (s[*i] != 0 && s[*i] != c )
+	while (s[*i] != 0 && s[*i] != c)
 	{
 		count++;
 		(*i)++;
-//		printf("valeur de count : %d\n", *count);
 	}
 	return (count);
 }
 
-char **ft_free_split(char **ptr)
+char	**ft_free_split(char **ptr)
 {
 	int	index;
 
@@ -48,9 +43,9 @@ char **ft_free_split(char **ptr)
 
 static char	**splited(char const *s, char **ptr, char c, int n_word)
 {
-	int		j;
-	int		k;
-	int		l;
+	int	j;
+	int	k;
+	int	l;
 	int	i;
 
 	j = 0;
@@ -65,7 +60,6 @@ static char	**splited(char const *s, char **ptr, char c, int n_word)
 			i++;
 		}
 		ptr[j] = malloc((count_size(s, c, &i) + 1) * sizeof(char));
-		//ptr[j] = calloc((count + 1), sizeof(char));
 		if (!ptr[j])
 			return (ft_free_split(ptr));
 		while (l < i)
@@ -75,11 +69,10 @@ static char	**splited(char const *s, char **ptr, char c, int n_word)
 	return (ptr);
 }
 
-
 static int	count_substrings(char const *s, char c)
 {
-	int		i;
-	int		counter;
+	int	i;
+	int	counter;
 
 	counter = 0;
 	i = 0;
@@ -107,23 +100,26 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	count = count_substrings(s, c);
-	//printf("count = %i\n", count);
 	ptr = malloc((count + 1) * sizeof(char *));
 	if (!ptr)
 		return (NULL);
 	ptr[count] = NULL;
-	
 	ptr = splited(s, ptr, c, count);
 	if (!ptr)
 		return (NULL);
 	return (ptr);
 }
 
-/*int main(void)
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
 {
-    char *s = "^^^1^^2a,^^^^3^^^^--h^^^^";
-    char c = '^';
-    char **result = ft_split(s,c);
+
+	char *s = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	char c = '^';
+	char **result = ft_split(s,c);
 	int i = 0;
 
 	while (result && result[i])
@@ -134,5 +130,3 @@ char	**ft_split(char const *s, char c)
 	ft_free_split(result);
 	return (0);
 }*/
-
-

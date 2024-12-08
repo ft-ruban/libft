@@ -3,45 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:59:16 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/05 14:16:10 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 20:21:07 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*error_malloc(char *ptr, char const *s);
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*ptr;
-	int		i;
-
-	ptr = NULL;
-	if (start >= strlen(s) || s[0] == 0)
-		return (error_malloc(ptr, s));
-	i = 0;
-	if (strlen(s) - start < len)
-		ptr = malloc(sizeof(char) * (strlen(s) - start + 1));
-	else
-		ptr = malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (NULL);
-	while (len-- > 0 && s[start])
-	{
-		ptr[i] = s[start];
-		start ++;
-		i++;
-	}
-	ptr [i] = 0;
-	return (ptr);
-}
-
-char	*error_malloc(char *ptr, char const *s)
+static char	*error_malloc(char *ptr, char const *s)
 {
 	if (s == NULL)
 		return (NULL);
@@ -51,19 +22,46 @@ char	*error_malloc(char *ptr, char const *s)
 	ptr[0] = 0;
 	return (ptr);
 }
-/*
-int main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char s[42] = "tripouille";
-	int  start = 3;
-	size_t len = 5;
-	char *result;
+	char	*ptr;
+	int		i;
 
+	ptr = NULL;
+	if (start >= ft_strlen(s) || s[0] == 0)
+		return (error_malloc(ptr, s));
+	i = 0;
+	if (ft_strlen(s) - start < len)
+		ptr = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	else
+		ptr = malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	while (len-- > 0 && s[start])
+	{
+		ptr[i] = s[start];
+		start++;
+		i++;
+	}
+	ptr[i] = 0;
+	return (ptr);
+}
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	s[42] = "tripouille";
+	int		start;
+	size_t	len;
+	char	*result;
+
+	start = 3;
+	len = 5;
 	//result = malloc(5);
 	result = ft_substr(s,start,len);
-
 //	while (result)
-	
 	{
 		printf("%s\n",result);
 //		result++;
