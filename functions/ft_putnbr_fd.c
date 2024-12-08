@@ -6,7 +6,7 @@
 /*   By: ldevoude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 08:59:11 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/04 07:33:17 by ldevoude         ###   ########.fr       */
+/*   Updated: 2024/12/08 16:53:44 by ldevoude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,60 @@
 #include <string.h>
 #include "libft.h"
 
+int	  calculate_val_tens (long cast_n);
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	length;
-	char *itoa_result;
+	int	tens;
+	long cast_n;
+	char c;
+	int mult;
 
-	itoa_result = ft_itoa(n); //besoin de finir cette partie
-	length = strlen(itoa_result);
-	write (fd, itoa_result, length);
-	return ;
+	mult = 1;
+	cast_n = (long)n;
+	if (cast_n == 0)
+	{
+		write (fd, "0", 1);
+		return;
+	}
+	if (cast_n < 0)
+	{
+		write (fd, "-", 1);
+		cast_n *= -1;
+	}
+	tens = calculate_val_tens (cast_n);
+	while (tens-- != 1)
+		mult *= 10;
+	
+	while (mult != 0)
+	{
+		c = (cast_n / mult) + '0';
+		cast_n %= mult;
+		mult /= 10;
+		write (fd, &c, 1);
+	}
+	return;
 }
 
+int	  calculate_val_tens (long cast_n)
+{
+	int result;
+
+	result = 1;
+	while (cast_n > 10)
+	{
+		cast_n /= 10;
+		result++;
+	}
+	return (result);
+}
+/*
 int main(void)
 {
     int handle = open("test.txt", O_WRONLY);
-    char s[64] = "forty-two";
-    ft_putnbr_fd(s, handle);
+    int n = 9;
+    ft_putnbr_fd(n, handle);
     printf("Success!\n");
 	return (0);
 }
-
+*/
