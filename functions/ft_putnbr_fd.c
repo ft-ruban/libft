@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 08:59:11 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/08 20:28:18 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2024/12/08 20:36:48 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,26 @@ static int	calculate_val_tens(long cast_n)
 	return (result);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void	print(int fd, int mult, long cast_n)
 {
 	int		tens;
-	long	cast_n;
 	char	c;
+
+	tens = calculate_val_tens(cast_n);
+	while (tens-- != 1)
+		mult *= 10;
+	while (mult != 0)
+	{
+		c = (cast_n / mult) + '0';
+		cast_n %= mult;
+		mult /= 10;
+		write(fd, &c, 1);
+	}
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	cast_n;
 	int		mult;
 
 	mult = 1;
@@ -44,17 +59,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		cast_n *= -1;
 	}
-	tens = calculate_val_tens(cast_n);
-	while (tens-- != 1)
-		mult *= 10;
-	while (mult != 0)
-	{
-		c = (cast_n / mult) + '0';
-		cast_n %= mult;
-		mult /= 10;
-		write(fd, &c, 1);
-	}
-	return ;
+	print(fd, mult, cast_n);
 }
 
 /*
