@@ -23,9 +23,9 @@ This project involves coding a C library that will include numerous general purp
 - ft_toupper.c
 - ft_tolower.c
 
-## String manipulation
+### String manipulation
 
-# functions used to manipulated, search, duplicate, or change strings
+#### functions used to manipulated, search, duplicate, or change strings
 
 - ft_strlen.c
 - ft_strlcpy.c
@@ -42,9 +42,9 @@ This project involves coding a C library that will include numerous general purp
 - ft_striteri.c
 - ft_strmapi.c
 
-## Memory manipulation
+### Memory manipulation
 
-# Functions related to memory allocation, init or copy
+#### Functions related to memory allocation, init or copy
 
 - ft_memset.c
 - ft_bzero.c
@@ -54,25 +54,25 @@ This project involves coding a C library that will include numerous general purp
 - ft_memcmp.c
 - ft_calloc.c
 
-## conversion functions
+### conversion functions
 
-# functions used to convert data types
+#### functions used to convert data types
 
 - ft_atoi.c
 - ft_itoa.c
 
-## File descriptor functions
+### File descriptor functions
 
-# functions used to print data to a given FD
+#### functions used to print data to a given FD
 
 - ft_putchar_fd.c
 - ft_putstr_fd.c
 - ft_putendl_fd.c
 - ft_putnbr_fd.c
 
-## Project files / misc
+### Project files / misc
 
-# Core files required for the library and compilation
+#### Core files required for the library and compilation
 
 - libft.h
 - Makefile
